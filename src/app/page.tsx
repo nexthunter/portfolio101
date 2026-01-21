@@ -1,4 +1,5 @@
 import { LinkPreviewDemoSecond } from "@/components/demo";
+import { Linkedin, Github, Instagram } from "lucide-react";
 import { ShaderBackground } from "@/components/ui/hero-shader";
 import { BentoDemo } from "@/components/bento-demo";
 import { EducationScroll } from "@/components/education-scroll";
@@ -37,7 +38,7 @@ export default function Home() {
             </header>
 
             {/* Main Hero Content - Center Aligned Grid */}
-            <main className="relative z-20 flex flex-col md:flex-row items-center justify-center w-full max-w-7xl mx-auto gap-8 pt-10">
+            <main className="relative z-20 flex pb-24 flex-col md:flex-row items-center justify-center w-full max-w-7xl mx-auto gap-8 pt-10">
 
               {/* Left: Portrait Image Container */}
               <div className="relative w-[300px] h-[450px] md:w-[400px] md:h-[600px] shrink-0 z-10">
@@ -102,7 +103,7 @@ export default function Home() {
                 {/* Buttons */}
                 <div className="flex justify-center md:justify-start gap-4">
                   <a href="#projects" className="px-8 py-3 rounded-full bg-transparent border border-white/30 text-white font-medium text-sm transition-all duration-200 hover:bg-white/10 hover:border-white/50">
-                    See how I Desgin & Build
+                    Explore my work
                   </a>
                   <a href="mailto:mohaddisansari1031@gmail.com" className="px-8 py-3 rounded-full bg-white text-black font-medium text-sm transition-all duration-200 hover:bg-white/90 shadow-lg shadow-white/20">
                     lets talk
@@ -115,7 +116,7 @@ export default function Home() {
 
 
 
-        <section className="skills py-24 px-0 " id="skills">
+        <section className="skills py-16 px-0 " id="skills">
 
           <h2 className="heading text-6xl font-light  text-center mb-24 text-white">
             - About <span className="text-light">ME -</span>
@@ -141,11 +142,11 @@ export default function Home() {
             <h2 className="heading text-6xl font-light text-center mb-10 text-white">
               - Get In <span className="text-light">Touch -</span>
             </h2>
-            <form className="glass p-12 rounded-[40px] border border-white/5 max-w-3xl mx-auto shadow-2xl">
+            <form className="glass p-6 md:p-12 rounded-[40px] border border-white/5 max-w-3xl mx-auto shadow-2xl">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <input type="text" placeholder="Full Name" className="bg-bg-deep/50 border border-white/10 rounded-2xl p-5 focus:border-accent-primary outline-none transition-colors" />
-                <input type="number" placeholder="Phone Number" className="bg-bg-deep/50 border border-white/10 rounded-2xl p-5 focus:border-accent-primary outline-none transition-colors" />
-                <input type="email" placeholder="Email Address" className="bg-bg-deep/50 border border-white/10 rounded-2xl p-5 focus:border-accent-primary outline-none transition-colors col-span-2" />
+                <input type="text" placeholder="Full Name" className="w-full bg-bg-deep/50 border border-white/10 rounded-2xl p-5 focus:border-accent-primary outline-none transition-colors" />
+                <input type="tel" placeholder="Phone Number" className="w-full bg-bg-deep/50 border border-white/10 rounded-2xl p-5 focus:border-accent-primary outline-none transition-colors" />
+                <input type="email" placeholder="Email Address" className="w-full bg-bg-deep/50 border border-white/10 rounded-2xl p-5 focus:border-accent-primary outline-none transition-colors col-span-1 md:col-span-2" />
               </div>
               <textarea rows={6} placeholder="Your Message" className="w-full bg-bg-deep/50 border border-white/10 rounded-2xl p-5 focus:border-accent-primary outline-none transition-colors mb-8 resize-none"></textarea>
               <button className="w-full bg-white text-black py-5 rounded-2xl font-light text-lg hover:scale-[0.98] transition-transform shadow-lg shadow-accent-primary/20">
@@ -156,7 +157,18 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="footer py-12 px-10 bg-bg-elevated/50 text-center border-t border-white/5">
+      <footer className="footer py-12 px-10 bg-bg-elevated/50 text-center border-t border-white/5 flex flex-col items-center gap-6">
+        <div className="flex items-center gap-6">
+          <a href="https://www.linkedin.com/in/mohaddisansari/" target="_blank" className="p-3 rounded-full bg-white/5 hover:bg-white text-white hover:text-black transition-all">
+            <Linkedin size={20} />
+          </a>
+          <a href="https://github.com/nexthunter" target="_blank" className="p-3 rounded-full bg-white/5 hover:bg-white text-white hover:text-black transition-all">
+            <Github size={20} />
+          </a>
+          <a href="https://www.instagram.com/mxau.nu/" target="_blank" className="p-3 rounded-full bg-white/5 hover:bg-white text-white hover:text-black transition-all">
+            <Instagram size={20} />
+          </a>
+        </div>
         <p className="text-text-muted">&copy; 2026 MOHADDIS ANSARI | Built with ❤️ & Passion</p>
       </footer>
     </div>
