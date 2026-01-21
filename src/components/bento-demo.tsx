@@ -16,7 +16,7 @@ const features = [
         href: "#projects",
         cta: "Learn more",
         description: "Showcasing my projects and technical capabilities. ",
-        background: <Image src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop" width={500} height={500} className="absolute -right-20 -top-20 opacity-60 object-cover w-full h-full" alt="Search" />,
+        background: <Image src="/what.png" width={500} height={500} className="absolute   opacity-50 object-cover w-full h-full" alt="Search" />,
         className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
     },
     {
@@ -24,7 +24,7 @@ const features = [
         href: "/",
         cta: "Learn more",
         description: "My academic journey and qualifications.",
-        background: <Image src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=2070&auto=format&fit=crop" width={500} height={500} className="absolute -right-20 -top-20 opacity-60 object-cover w-full h-full" alt="Globe" />,
+        background: <Image src="/edu.jpg" width={500} height={500} className="absolute  grayscale-100 opacity-50 object-cover w-full h-full" alt="Globe" />,
         className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
     },
     {

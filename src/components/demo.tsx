@@ -6,7 +6,7 @@ import { BlurTextAnimation } from "./ui/blur-text-animation";
 export function LinkPreviewDemoSecond() {
     return (
         <div className="flex justify-center items-start font-light h-auto min-h-[40rem] flex-col px-4 py-0 w-[90%] mx-auto gap-10">
-            <div className="text-neutral-500 dark:text-neutral-500 text-xl md:text-3xl text-left w-[85%] mt-10 leading-relaxed">
+            <div className="text-neutral-500 dark:text-neutral-500 text-xl md:text-3xl text-left w-full md:w-[85%] mt-10 leading-relaxed">
                 <BlurTextAnimation text="I don’t just design websites — I build real, working systems." className="inline" />{" "}
                 <LinkPreview
                     url="https://luxemarket-mcrc.vercel.app/"
@@ -17,7 +17,7 @@ export function LinkPreviewDemoSecond() {
                 <BlurTextAnimation text="is a full-stack e-commerce platform built end-to-end to simulate real production logic." className="inline" />
             </div>
 
-            <div className="text-neutral-500 dark:text-neutral-500 text-xl md:text-3xl text-right w-[85%] ml-40 leading-relaxed">
+            <div className="text-neutral-500 dark:text-neutral-500 text-xl md:text-3xl text-left md:text-right w-full md:w-[85%] ml-0 md:ml-auto leading-relaxed">
                 <BlurTextAnimation text="Projects like" className="inline" />{" "}
                 <LinkPreview
                     url="https://primetaxi.vercel.app/"
@@ -63,7 +63,7 @@ export function LinkPreviewDemoSecond() {
                 <BlurTextAnimation text="are all integrated with Google Sheets to capture leads, bookings, or form data." className="inline" />
             </div>
 
-            <div className="text-neutral-500 dark:text-neutral-500 text-xl md:text-3xl text-left w-[85%] leading-relaxed">
+            <div className="text-neutral-500 dark:text-neutral-500 text-xl md:text-3xl text-left w-full md:w-[85%] leading-relaxed">
                 <BlurTextAnimation text="With" className="inline" />{" "}
                 <LinkPreview
                     url="https://fluxdm.space"
