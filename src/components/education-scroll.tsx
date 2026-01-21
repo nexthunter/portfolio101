@@ -70,19 +70,19 @@ export const EducationScroll = () => {
                 - <span className="text-light">Education</span> Journey -
             </h2>
 
-            <div className="max-w-7xl w-full px-4 flex flex-col lg:flex-row gap-6 relative z-10 items-stretch">
+            <div className="max-w-7xl w-full px-4 flex flex-col lg:flex-row  relative z-10 items-stretch">
                 {educationData.map((item, idx) => (
                     <div
                         key={idx}
                         ref={(el) => { itemsRef.current[idx] = el; }}
-                        className="glass p-8 rounded-2xl border border-white/5 hover:border-accent-primary/30 transition-all duration-300 w-full lg:w-1/4 opacity-0 flex flex-col justify-between"
+                        className="glass p-8  border border-white/2 hover:border-accent-primary/30 transition-all duration-300 w-full lg:w-1/4 opacity-0 flex flex-col justify-between"
                     >
                         <div className="flex flex-col gap-4 h-full">
-                            <div className="text-sm font-bold text-accent-primary whitespace-nowrap bg-accent-primary/10 px-4 py-2 rounded-full border border-accent-primary/20 w-fit mb-2">
+                            <div className="text-sm font-light whitespace-nowrap bg-white/10 px-4 py-2 rounded-full border border-white/20 w-fit mb-2">
                                 {item.date}
                             </div>
                             <div>
-                                <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                                <h3 className="text-xl font-light text-white mb-2">{item.title}</h3>
                                 <p className="text-text-muted text-sm leading-relaxed">{item.desc}</p>
                             </div>
                         </div>

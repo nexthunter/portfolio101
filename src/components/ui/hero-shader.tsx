@@ -45,12 +45,12 @@ export function ShaderBackground({ children, className = "" }: ShaderBackgroundP
             {/* Background Shaders */}
             <MeshGradient
                 className="absolute inset-0 w-full h-full"
-                colors={["#000000", "#16251eff", "#ffffff", "#1e1b4b", "#382e47ff"]}
+                colors={["#000000", "#000000", "#ffffff", "#000000", "#000000ff"]}
                 speed={0.3}
             />
             <MeshGradient
                 className="absolute inset-0 w-full h-full opacity-60"
-                colors={["#000000", "#ffffff", "#182c1bff", "#000000"]}
+                colors={["#000000", "#ffffff", "#000000", "#000000", "#000000"]}
                 speed={0.2}
             />
 

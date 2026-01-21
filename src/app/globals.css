@@ -9,8 +9,8 @@
   --font-sans: var(--font-inter);
   --font-outfit: var(--font-outfit);
 
-  --color-accent-primary: #6366F1;
-  --color-accent-secondary: #A855F7;
+  --color-accent-primary: #FFFFFF;
+  --color-accent-secondary: #A3A3A3;
   --color-bg-deep: #0A0A0B;
   --color-bg-elevated: #161618;
   --color-text-main: #F8FAFC;
@@ -62,18 +62,18 @@
   --card-foreground: #F8FAFC;
   --popover: #161618;
   --popover-foreground: #F8FAFC;
-  --primary: #6366F1;
-  --primary-foreground: #FFFFFF;
-  --secondary: #A855F7;
+  --primary: #FFFFFF;
+  --primary-foreground: #000000;
+  --secondary: #A3A3A3;
   --secondary-foreground: #FFFFFF;
   --muted: #161618;
   --muted-foreground: #94A3B8;
-  --accent: #6366F1;
-  --accent-foreground: #FFFFFF;
-  --destructive: oklch(0.577 0.245 27.325);
+  --accent: #FFFFFF;
+  --accent-foreground: #000000;
+  --destructive: #A3A3A3;
   --border: rgba(255, 255, 255, 0.1);
   --input: rgba(255, 255, 255, 0.1);
-  --ring: #6366F1;
+  --ring: #FFFFFF;
 }
 
 @layer base {

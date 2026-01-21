@@ -4,18 +4,18 @@ import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 
 const features = [
     {
+        name: "who I am",
+        href: "/about",
+        cta: "Learn more",
+        description: "A glimpse into my background and personality.",
+        background: <Image src="/moody.png" width={500} height={500} className="absolute  grayscale-5 opacity-50 object-contain w-full h-full" alt="Files" />,
+        className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
+    },
+    {
         name: "What I Build",
         href: "#projects",
         cta: "Learn more",
         description: "Showcasing my projects and technical capabilities. ",
-        background: <Image src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width={500} height={500} className="absolute -top-10 -right-20 opacity-20 object-cover w-full h-full" alt="Files" />,
-        className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
-    },
-    {
-        name: "Who I Am",
-        href: "/about",
-        cta: "Learn more",
-        description: "A glimpse into my background and personality.",
         background: <Image src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop" width={500} height={500} className="absolute -right-20 -top-20 opacity-60 object-cover w-full h-full" alt="Search" />,
         className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
     },
