@@ -50,7 +50,7 @@ export default function Home() {
                 {/* Main Heading */}
                 <h1 className="text-6xl md:text-7xl lg:text-8xl leading-[0.9] tracking-tight text-white mb-6">
                   <span className="font-serif italic font-light opacity-90 block mb-2">Mohaddis</span>
-                  <span className="font-bold flex items-center text-5xl gap-3">
+                  <span className="font-light flex items-center text-5xl gap-3">
                     YOUR
                     <TypewriterEffect
                       words={[
@@ -98,6 +98,7 @@ export default function Home() {
 
 
         <section className="skills py-32 px-10" id="skills">
+
           <h2 className="heading text-6xl font-light  text-center mb-24 text-white">
             - About <span className="text-light">ME -</span>
           </h2>
@@ -108,24 +109,44 @@ export default function Home() {
 
         <EducationScroll />
         <section id="projects">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute top-0 left-0 w-full h-full object-cover opacity-20 z-0"
+          >
+            <source src="/bg.mp4" type="video/mp4" />
+          </video>
           <LinkPreviewDemoSecond />
         </section>
 
-        <section className="contact py-32 px-10 bg-gray-940" id="contact">
-          <h2 className="heading text-6xl font-light text-center mb-10 text-white">
-            - Get In <span className="text-light">Touch -</span>
-          </h2>
-          <form className="glass p-12 rounded-[40px] border border-white/5 max-w-3xl mx-auto shadow-2xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <input type="text" placeholder="Full Name" className="bg-bg-deep/50 border border-white/10 rounded-2xl p-5 focus:border-accent-primary outline-none transition-colors" />
-              <input type="number" placeholder="Phone Number" className="bg-bg-deep/50 border border-white/10 rounded-2xl p-5 focus:border-accent-primary outline-none transition-colors" />
-              <input type="email" placeholder="Email Address" className="bg-bg-deep/50 border border-white/10 rounded-2xl p-5 focus:border-accent-primary outline-none transition-colors col-span-2" />
-            </div>
-            <textarea rows={6} placeholder="Your Message" className="w-full bg-bg-deep/50 border border-white/10 rounded-2xl p-5 focus:border-accent-primary outline-none transition-colors mb-8 resize-none"></textarea>
-            <button className="w-full bg-white text-black py-5 rounded-2xl font-light text-lg hover:scale-[0.98] transition-transform shadow-lg shadow-accent-primary/20">
-              Send Message
-            </button>
-          </form>
+        <section className="contact relative py-32 px-10 overflow-hidden" id="contact">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute top-0 left-0 w-full h-full object-cover opacity-20 z-0"
+          >
+            <source src="/bg.mp4" type="video/mp4" />
+          </video>
+          <div className="relative z-10">
+            <h2 className="heading text-6xl font-light text-center mb-10 text-white">
+              - Get In <span className="text-light">Touch -</span>
+            </h2>
+            <form className="glass p-12 rounded-[40px] border border-white/5 max-w-3xl mx-auto shadow-2xl">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <input type="text" placeholder="Full Name" className="bg-bg-deep/50 border border-white/10 rounded-2xl p-5 focus:border-accent-primary outline-none transition-colors" />
+                <input type="number" placeholder="Phone Number" className="bg-bg-deep/50 border border-white/10 rounded-2xl p-5 focus:border-accent-primary outline-none transition-colors" />
+                <input type="email" placeholder="Email Address" className="bg-bg-deep/50 border border-white/10 rounded-2xl p-5 focus:border-accent-primary outline-none transition-colors col-span-2" />
+              </div>
+              <textarea rows={6} placeholder="Your Message" className="w-full bg-bg-deep/50 border border-white/10 rounded-2xl p-5 focus:border-accent-primary outline-none transition-colors mb-8 resize-none"></textarea>
+              <button className="w-full bg-white text-black py-5 rounded-2xl font-light text-lg hover:scale-[0.98] transition-transform shadow-lg shadow-accent-primary/20">
+                Send Message
+              </button>
+            </form>
+          </div>
         </section>
       </main>
 
