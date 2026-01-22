@@ -78,11 +78,13 @@ export function BlurTextAnimation({
                 {words.map((word, index) => (
                     <span
                         key={index}
-                        className={`inline-block transition-all ${isAnimating ? 'opacity-100' : 'opacity-0'}`}
+                        className={`inline-block`}
                         style={{
+                            transitionProperty: 'filter, transform, opacity',
                             transitionDuration: `${word.duration}s`,
                             transitionDelay: `${word.delay}s`,
                             transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                            opacity: isAnimating ? 1 : 0,
                             filter: isAnimating
                                 ? 'blur(0px) brightness(1)'
                                 : `blur(${word.blur}px) brightness(0.6)`,
@@ -90,8 +92,7 @@ export function BlurTextAnimation({
                                 ? 'translateY(0) scale(1) rotateX(0deg)'
                                 : `translateY(20px) scale(${word.scale || 1}) rotateX(-15deg)`,
                             marginRight: '0.35em',
-                            willChange: 'filter, transform, opacity',
-                            transformStyle: 'preserve-3d',
+                            willChange: 'transform, filter',
                             backfaceVisibility: 'hidden',
                             textShadow: isAnimating
                                 ? '0 2px 8px rgba(255,255,255,0.1)'
