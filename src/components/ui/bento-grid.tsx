@@ -38,10 +38,10 @@ const BentoCard = ({
     href: string;
     cta: string;
 }) => (
-    <div
-        key={name}
+    <a
+        href={href}
         className={cn(
-            "group relative col-span-3 flex flex-col justify-between overflow-hidden ",
+            "group relative col-span-3 flex flex-col justify-between overflow-hidden cursor-pointer",
             // light styles
             "bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
             // dark styles
@@ -57,20 +57,22 @@ const BentoCard = ({
             <p className="max-w-lg text-neutral-400">{description}</p>
         </div>
 
+        {/* Button - Hidden on mobile, shown on desktop hover */}
         <div
             className={cn(
-                "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100",
+                "pointer-events-none absolute bottom-0 hidden w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100",
+                "md:flex" // Only show button on desktop
             )}
         >
             <Button variant="ghost" asChild size="sm" className="pointer-events-auto">
-                <a href={href}>
+                <span>
                     {cta}
                     <ArrowRightIcon className="ml-2 h-4 w-4" />
-                </a>
+                </span>
             </Button>
         </div>
         <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />
-    </div>
+    </a>
 );
 
 export { BentoCard, BentoGrid };

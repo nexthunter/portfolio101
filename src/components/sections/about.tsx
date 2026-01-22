@@ -14,6 +14,8 @@ function AboutSection() {
                             src={feature.imgSrc}
                             width={500}
                             height={500}
+                            priority={idx < 3} // Priority load first 3 images
+                            loading={idx < 3 ? "eager" : "lazy"}
                             sizes="(max-width: 768px) 100vw, 500px"
                             className={`absolute w-full h-full ${feature.imgClass} ${feature.extraClasses || ''}`}
                             alt={feature.name}
