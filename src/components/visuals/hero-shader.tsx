@@ -14,7 +14,7 @@ export function ShaderBackground({ children, className = "" }: ShaderBackgroundP
 
     return (
         <div ref={containerRef} className={`min-h-screen w-full relative overflow-hidden bg-black ${className}`}>
-            {/* SVG Filters */}
+            {/* SVG Filters - Disabled for performance optimization
             <svg className="absolute inset-0 w-0 h-0">
                 <defs>
                     <filter id="glass-effect" x="-50%" y="-50%" width="200%" height="200%">
@@ -41,6 +41,7 @@ export function ShaderBackground({ children, className = "" }: ShaderBackgroundP
                     </filter>
                 </defs>
             </svg>
+            */}
 
             {/* Background Shaders */}
             <MeshGradient
