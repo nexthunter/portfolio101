@@ -1,6 +1,6 @@
 "use client"
 
-import type React from "react"
+import React from "react"
 import { MeshGradient } from "@paper-design/shaders-react"
 
 interface ShaderBackgroundProps {
@@ -22,7 +22,7 @@ export function ShaderBackground({ children, className = "" }: ShaderBackgroundP
     }, []);
 
     return (
-        <div ref={containerRef} className={`min-h-screen w-full relative overflow-hidden bg-black ${className}`}>
+        <div className={`min-h-screen w-full relative overflow-hidden bg-black ${className}`}>
             {/* Static CSS Gradient Fallback (for Mobile & Loading) */}
             <div className="absolute inset-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#333_0%,#000_100%)] opacity-40" />
 
