@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-import { useRef } from "react"
 import { MeshGradient } from "@paper-design/shaders-react"
 
 interface ShaderBackgroundProps {
@@ -10,50 +9,31 @@ interface ShaderBackgroundProps {
 }
 
 export function ShaderBackground({ children, className = "" }: ShaderBackgroundProps) {
-    const containerRef = useRef<HTMLDivElement>(null)
+    const [isDesktop, setIsDesktop] = React.useState(false);
+
+    React.useEffect(() => {
+        const checkIsDesktop = () => {
+            setIsDesktop(window.innerWidth >= 768);
+        };
+
+        checkIsDesktop();
+        window.addEventListener('resize', checkIsDesktop);
+        return () => window.removeEventListener('resize', checkIsDesktop);
+    }, []);
 
     return (
         <div ref={containerRef} className={`min-h-screen w-full relative overflow-hidden bg-black ${className}`}>
-            {/* SVG Filters - Disabled for performance optimization
-            <svg className="absolute inset-0 w-0 h-0">
-                <defs>
-                    <filter id="glass-effect" x="-50%" y="-50%" width="200%" height="200%">
-                        <feTurbulence baseFrequency="0.005" numOctaves="1" result="noise" />
-                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="0.3" />
-                        <feColorMatrix
-                            type="matrix"
-                            values="1 0 0 0 0.02
-                      0 1 0 0 0.02
-                      0 0 1 0 0.05
-                      0 0 0 0.9 0"
-                            result="tint"
-                        />
-                    </filter>
-                    <filter id="gooey-filter" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
-                        <feColorMatrix
-                            in="blur"
-                            mode="matrix"
-                            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-                            result="gooey"
-                        />
-                        <feComposite in="SourceGraphic" in2="gooey" operator="atop" />
-                    </filter>
-                </defs>
-            </svg>
-            */}
+            {/* Static CSS Gradient Fallback (for Mobile & Loading) */}
+            <div className="absolute inset-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#333_0%,#000_100%)] opacity-40" />
 
-            {/* Background Shaders */}
-            <MeshGradient
-                className="absolute inset-0 w-full h-full"
-                colors={["#000000", "#000000", "#ffffff", "#000000", "#000000ff"]}
-                speed={0.3}
-            />
-            <MeshGradient
-                className="absolute inset-0 w-full h-full opacity-60"
-                colors={["#000000", "#ffffff", "#000000", "#000000", "#000000"]}
-                speed={0.2}
-            />
+            {/* Background Shaders - Desktop Only */}
+            {isDesktop && (
+                <MeshGradient
+                    className="absolute inset-0 w-full h-full opacity-60"
+                    colors={["#000000", "#111111", "#333333", "#111111", "#000000"]}
+                    speed={0.1}
+                />
+            )}
 
             {children}
         </div>
