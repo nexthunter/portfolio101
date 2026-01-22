@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import { LinkPreview } from "@/components/ui/link-preview";
-import { BlurTextAnimation } from "./ui/blur-text-animation";
+import { BlurTextAnimation } from "@/components/visuals/blur-text";
 
-export function LinkPreviewDemoSecond() {
+export function Projects() {
     return (
         <div className="flex justify-center items-start font-light h-auto min-h-[40rem] flex-col px-4 py-0 w-[90%] mx-auto gap-10">
             <div className="text-neutral-500 dark:text-neutral-500 text-xl md:text-3xl text-left w-full md:w-[85%] mt-10 leading-relaxed">
@@ -19,13 +19,6 @@ export function LinkPreviewDemoSecond() {
 
             <div className="text-neutral-500 dark:text-neutral-500 text-xl md:text-3xl text-left md:text-right w-full md:w-[85%] ml-0 md:ml-auto leading-relaxed">
                 <BlurTextAnimation text="Projects like" className="inline" />{" "}
-                <LinkPreview
-                    url="https://primetaxi.vercel.app/"
-                    className="font-light cursor-pointer font-serif italic"
-                >
-                    PrimeTaxi
-                </LinkPreview>
-                ,{" "}
                 <LinkPreview
                     url="https://ecoluxe-salon.vercel.app/"
                     className="font-light cursor-pointer font-serif italic"

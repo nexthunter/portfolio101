@@ -56,11 +56,7 @@ export const LinkPreview = ({
 
     const [isOpen, setOpen] = React.useState(false);
 
-    const [isMounted, setIsMounted] = React.useState(false);
-
-    React.useEffect(() => {
-        setIsMounted(true);
-    }, []);
+    // Removed unused isMounted state that was used for the priority loader
 
     const springConfig = { stiffness: 100, damping: 15 };
     const x = useMotionValue(0);
@@ -76,19 +72,7 @@ export const LinkPreview = ({
 
     return (
         <>
-            {isMounted ? (
-                <div className="hidden">
-                    <Image
-                        src={src}
-                        width={width}
-                        height={height}
-                        quality={quality}
-                        layout={layout}
-                        priority={true}
-                        alt="hidden image"
-                    />
-                </div>
-            ) : null}
+            {/* Removed aggressive preloading to improve performance */}
 
             <HoverCardPrimitive.Root
                 openDelay={50}
