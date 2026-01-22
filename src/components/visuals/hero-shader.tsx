@@ -39,17 +39,13 @@ export function ShaderBackground({ children, className = "" }: ShaderBackgroundP
             {/* Static CSS Gradient Fallback (for Mobile & Loading) */}
             <div className="absolute inset-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#333_0%,#000_100%)] opacity-40 z-0" />
 
-            {/* Mobile Video Background (Looped) */}
+            {/* Mobile Animated Shader (Recorded WebP) */}
             {!isDesktop && (
                 <div className="absolute inset-0 w-full h-full z-0 opacity-60">
-                    <video
+                    <img
                         className="w-full h-full object-cover"
-                        src="/mobile-shader.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        poster="/mobile-fallback.png" // Fallback image execution
+                        src="/mobile-shader.webp"
+                        alt="Background Animation"
                     />
                 </div>
             )}
