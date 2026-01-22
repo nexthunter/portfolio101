@@ -30,8 +30,8 @@ export function ShaderBackground({ children, className = "" }: ShaderBackgroundP
             {isDesktop && (
                 <MeshGradient
                     className="absolute inset-0 w-full h-full opacity-60"
-                    colors={["#000000", "#111111", "#333333", "#111111", "#000000"]}
-                    speed={0.1}
+                    colors={["#000000", "#000000", "#ffffff", "#000000", "#000000"]}
+                    speed={0.5}
                 />
             )}
 
