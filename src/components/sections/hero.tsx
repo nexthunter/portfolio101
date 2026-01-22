@@ -15,6 +15,7 @@ export function Hero() {
                         alt="Mohaddis"
                         fill
                         priority
+                        sizes="(max-width: 768px) 300px, 400px"
                         className="object-cover  shadow-2xl brightness-75"
                     />
 

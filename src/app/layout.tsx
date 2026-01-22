@@ -18,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://unpkg.com" />
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
       </head>
       <body className={`${inter.variable} ${outfit.variable} antialiased`} suppressHydrationWarning>
