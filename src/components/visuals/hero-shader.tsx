@@ -49,7 +49,7 @@ export function ShaderBackground({ children, className = "" }: ShaderBackgroundP
                         loop
                         muted
                         playsInline
-                        poster="/hero.png" // Fallback image execution
+                        poster="/mobile-fallback.png" // Fallback image execution
                     />
                 </div>
             )}
