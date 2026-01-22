@@ -42,7 +42,7 @@ export function BlurTextAnimation({
             // Use deterministic pseudo-randomness based on index and text length
             // This avoids "impure render" errors and hydration mismatches
             const pseudoRandom = Math.sin(index * 43758.5453 + text.length) * 0.033; // 0.05 / 1.5
-            const pseudoRandomBlur = (Math.abs(Math.sin(index * 12.9898)) * 8) + 12;
+            const pseudoRandomBlur = (Math.abs(Math.sin(index * 12.9898)) * 4) + 2;
 
             return {
                 text: word,
