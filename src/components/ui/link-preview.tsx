@@ -5,9 +5,7 @@ import { encode } from "qss";
 import React from "react";
 import {
     AnimatePresence,
-    LazyMotion,
-    domAnimation,
-    m,
+    motion,
     useMotionValue,
     useSpring,
 } from "framer-motion";
@@ -73,7 +71,7 @@ export const LinkPreview = ({
     };
 
     return (
-        <LazyMotion features={domAnimation}>
+        <>
             {/* Removed aggressive preloading to improve performance */}
 
             <HoverCardPrimitive.Root
@@ -99,7 +97,7 @@ export const LinkPreview = ({
                 >
                     <AnimatePresence>
                         {isOpen && (
-                            <m.div
+                            <motion.div
                                 initial={{ opacity: 0, y: 20, scale: 0.6 }}
                                 animate={{
                                     opacity: 1,
@@ -133,11 +131,11 @@ export const LinkPreview = ({
                                         alt="preview image"
                                     />
                                 </Link>
-                            </m.div>
+                            </motion.div>
                         )}
                     </AnimatePresence>
                 </HoverCardPrimitive.Content>
             </HoverCardPrimitive.Root>
-        </LazyMotion>
+        </>
     );
 };
