@@ -9,7 +9,6 @@ export function Navbar() {
                 <div className="w-8 h-8 bg-white text-black flex items-center justify-center font-bold rounded-md mr-2">
                     M
                 </div>
-                <span className="text-white font-bold tracking-tight">nextHUNTER</span>
             </div>
 
             {/* Navigation */}

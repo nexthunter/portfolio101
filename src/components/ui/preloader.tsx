@@ -30,9 +30,9 @@ export function Preloader() {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="relative"
                     >
-                        <h1 className="text-4xl md:text-6xl font-light text-white tracking-tighter">
-                            <span className="font-serif italic opacity-80 mr-3">Mohaddis</span>
-                            <span className="font-bold">Ansari</span>
+                        <h1 className="text-6xl md:text-9xl font-light text-white tracking-tighter">
+                            <span className="font-serif font-weight-500 italic opacity-80 mr-3">M</span>
+                            <span className="font-bold">A</span>
                         </h1>
                     </motion.div>
                 </motion.div>
