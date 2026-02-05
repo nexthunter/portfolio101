@@ -12,6 +12,17 @@ interface ShaderBackgroundProps {
 export function ShaderBackground({ children, className = "" }: ShaderBackgroundProps) {
     const { isLoading } = useLoader();
     const [showShader, setShowShader] = React.useState(false);
+    const [isMobile, setIsMobile] = React.useState(false);
+
+    React.useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     // Defer shader load after preloader for performance on all devices
     React.useEffect(() => {
@@ -28,8 +39,8 @@ export function ShaderBackground({ children, className = "" }: ShaderBackgroundP
             {/* Static CSS Gradient Fallback (for Loading) */}
             <div className="absolute inset-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#333_0%,#000_100%)] opacity-40" />
 
-            {/* Background Shaders - All Devices (Deferred for performance) */}
-            {showShader && (
+            {/* Background Shaders - Desktop Only (Deferred for performance) */}
+            {showShader && !isMobile && (
                 <MeshGradient
                     className="absolute inset-0 w-full h-full opacity-60"
                     colors={["#000000", "#000000", "#ffffff", "#000000", "#000000"]}

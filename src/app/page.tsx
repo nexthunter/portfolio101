@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import { Outfit, Inter } from "next/font/google";
+
 import { ShaderBackground } from "@/components/visuals/hero-shader";
 import { Navbar } from "@/components/layout/navbar";
 import { Hero } from "@/components/sections/hero";
@@ -10,12 +10,11 @@ const EducationScroll = dynamic(() => import("@/components/sections/education").
 const Projects = dynamic(() => import("@/components/sections/projects").then(mod => mod.Projects));
 const Contact = dynamic(() => import("@/components/sections/contact").then(mod => mod.Contact));
 
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit", display: "swap" });
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+
 
 export default function Home() {
   return (
-    <div className={`${inter.variable} ${outfit.variable} font-sans bg-bg-deep text-text-main selection:bg-accent-primary/30`}>
+    <div className={`font-sans bg-bg-deep text-text-main selection:bg-accent-primary/30`}>
       <main>
         <section className="home relative" id="home">
           <ShaderBackground className="flex items-center justify-center px-10 pt-32 min-h-screen">

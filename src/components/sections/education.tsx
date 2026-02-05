@@ -33,6 +33,17 @@ const educationData = [
 export const EducationScroll = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
+    const [isMobile, setIsMobile] = React.useState(false);
+
+    React.useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     useGSAP(() => {
         const items = itemsRef.current;
@@ -42,7 +53,7 @@ export const EducationScroll = () => {
                 trigger: containerRef.current,
                 start: "top top",
                 end: `+=${items.length * 400}`, // Scroll distance proportional to items
-                pin: true,
+                pin: !isMobile,
                 scrub: 1,
             }
         });

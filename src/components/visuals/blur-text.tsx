@@ -2,13 +2,7 @@
 
 import React, { useEffect, useRef, useState, useMemo } from "react";
 
-interface WordData {
-    text: string;
-    duration: number;
-    delay: number;
-    blur: number;
-    scale?: number;
-}
+
 
 interface BlurTextAnimationProps {
     text?: string;
@@ -28,7 +22,18 @@ export function BlurTextAnimation({
     animationDelay = 0,
 }: BlurTextAnimationProps) {
     const [isAnimating, setIsAnimating] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const elementRef = useRef<HTMLSpanElement>(null);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const words = useMemo(() => {
         const splitWords = text.split(" ");
@@ -85,10 +90,10 @@ export function BlurTextAnimation({
                             transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                             filter: isAnimating
                                 ? 'blur(0px) brightness(1)'
-                                : `blur(${word.blur}px) brightness(0.6)`,
+                                : (isMobile ? 'opacity(0)' : `blur(${word.blur}px) brightness(0.6)`),
                             transform: isAnimating
                                 ? 'translateY(0) scale(1) rotateX(0deg)'
-                                : `translateY(20px) scale(${word.scale || 1}) rotateX(-15deg)`,
+                                : (isMobile ? 'translateY(10px)' : `translateY(20px) scale(${word.scale || 1}) rotateX(-15deg)`),
                             marginRight: '0.35em',
                             willChange: 'filter, transform, opacity',
                             transformStyle: 'preserve-3d',
