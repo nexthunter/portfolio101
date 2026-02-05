@@ -1,7 +1,11 @@
 "use client"
 
 import React from "react"
-import { MeshGradient } from "@paper-design/shaders-react"
+import dynamic from "next/dynamic";
+
+const MeshGradient = dynamic(() => import("@paper-design/shaders-react").then(mod => mod.MeshGradient), {
+    ssr: false,
+});
 import { useLoader } from "@/context/loader-context";
 
 interface ShaderBackgroundProps {
