@@ -66,10 +66,12 @@ export const TypewriterEffect = ({
             <motion.div
                 className="overflow-hidden"
                 initial={{
-                    width: "0%",
+                    clipPath: "inset(0 100% 0 0)",
+                    width: "fit-content"
                 }}
                 animate={{
-                    width: "fit-content",
+                    clipPath: "inset(0 0% 0 0)",
+                    width: "fit-content"
                 }}
                 transition={{
                     duration: 2,
