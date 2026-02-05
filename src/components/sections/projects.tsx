@@ -9,7 +9,7 @@ export function Projects() {
             <div className="text-neutral-500 dark:text-neutral-500 text-xl md:text-3xl text-left w-full md:w-[85%] mt-10 leading-relaxed">
                 <BlurTextAnimation text="I don’t just design websites — I build real, working systems." className="inline" />{" "}
                 <LinkPreview
-                    url="https://luxemarket-mcrc.vercel.app/"
+                    url="https://luxemarket-gamma.vercel.app/"
                     className="font-light font-serif italic cursor-pointer"
                 >
                     Luxemarket
